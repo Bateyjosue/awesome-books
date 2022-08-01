@@ -7,27 +7,45 @@
     <script defer src="js/apps.js"></script>
     <title>Awesome Books</title>
 
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/style.css" />
   </head>
   <body>
     <main>
       <section class="book-list-container">
-        <h1>Awesome Books</h1>
+        <h2>Awesome Books</h2>
 
-        <ul class="book-list">
-
-        </ul>
+        <ul class="book-list"></ul>
       </section>
       <section class="new-book">
-        <form action="" method="post" class="add-book" id="add-book">
+        <form method="post" class="add-book" id="add-book">
           <div class="input-field">
-            <input type="text" name="title" id="title" placeholder="Title" required>
+            <input
+              type="text"
+              name="title"
+              id="title"
+              placeholder="Title"
+              aria-label="Book Title"
+              required
+            />
           </div>
           <div class="input-field">
-            <input type="text" name="author" id="author" placeholder="Author" required>
+            <input
+              type="text"
+              name="author"
+              id="author"
+              placeholder="Author"
+              aria-label="Book Author"
+              required
+            />
           </div>
           <div class="input-field">
-            <input type="submit" name="submit" id="submit" value="Add">
+            <input
+              type="submit"
+              name="submit"
+              id="submit"
+              value="Add"
+              aria-label="Submit"
+            />
           </div>
         </form>
       </section>

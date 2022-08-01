@@ -1,17 +1,17 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 main {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 .book-list {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 #add-book .input-field {
-    margin: 1rem 0rem;
+  margin: 1rem 0;
 }
