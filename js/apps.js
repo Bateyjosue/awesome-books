@@ -1,15 +1,15 @@
 const addBook = document.forms['add-book'];
 const addBookButton = document.querySelector('#submit');
 const bookList = document.querySelector('.book-list')
-const bookArray = [
-    {
-        title: 'Lorem Ipsum 1',
-        author: 'Author A',
-    },
-    {
-        title: 'Lorem Ipsum 2',
-        author: 'Author B',
-    },
+let bookArray = [
+    // {
+    //     title: 'Lorem Ipsum 1',
+    //     author: 'Author A',
+    // },
+    // {
+    //     title: 'Lorem Ipsum 2',
+    //     author: 'Author B',
+    // },
 ];
 
 class Book {
@@ -20,9 +20,16 @@ class Book {
     }
 }
 
+if (localStorage.getItem('bookArray') === null) {
+    bookArray = [];
+} else {
+    bookArray = JSON.parse(localStorage.getItem('bookArray'));
+}
+
 function createBook(title, author) {
     const newBook = new Book(title, author);
     bookArray.push(newBook);
+    localStorage.setItem('bookArray', JSON.stringify(bookArray));
 }
 
 addBookButton.addEventListener('click', function (event) {
@@ -46,6 +53,7 @@ bookList.addEventListener('click', function(e) {
         const filt = bookArray.filter( book => bookTitle.toLowerCase() == book.title.toLowerCase())
         const filtIndex = bookArray.indexOf(filt[0]);
         bookArray.splice(filtIndex, 1);
+        localStorage.setItem('bookArray', JSON.stringify(bookArray));
         bookList.removeChild(book);
 
     }
