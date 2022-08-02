@@ -41,10 +41,11 @@ addBookButton.addEventListener('click', (event) => {
     bookOject.createBook(bookTitle, bookAuthor);
     bookOject.updateCollection();
     bookList.innerHTML += `<li class="book">
-          <p class="title">${bookTitle}</p>
-          <p class="author">${bookAuthor}</p>
+          <p>
+          "<span class="title">${bookTitle}</span>" by
+          <span class="author">${bookAuthor}</span>
+          </p>
           <button type="button" class="delete-btn">Remove</button>
-          <hr />
         </li>`;
   } else {
     const div = document.createElement('div');
@@ -66,9 +67,10 @@ bookList.addEventListener('click', (e) => {
 
 bookArray.forEach((book) => {
   bookList.innerHTML += `<li class="book">
-          <p class="title">${book.title}</p>
-          <p class="author">${book.author}</p>
+          <p>
+          "<span class="title">${book.title}</span>" by
+          <span class="author">${book.author}</span>
+          </p>
           <button type="button" class="delete-btn">Remove</button>
-          <hr />
         </li>`;
 });
