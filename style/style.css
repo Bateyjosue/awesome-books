@@ -21,7 +21,7 @@ h2 {
 
 p,
 input {
-  font-family: Georgia, "Times New Roman" ;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 0.8em;
 }
 
@@ -38,7 +38,6 @@ input {
 
 .book-list {
   list-style-type: none;
-  display: block;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -58,7 +57,7 @@ ul li {
 }
 
 ul li:nth-child(odd) {
-  background-color: #dddddd;
+  background-color: #ddd;
 }
 
 input[type="submit"],
