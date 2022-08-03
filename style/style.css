@@ -26,6 +26,17 @@ ul {
   font-size: 1em;
 }
 
+.hide {
+  display: none;
+  visibility: hidden;
+  position:fixed;
+
+}
+
+.show {
+  display: block;
+}
+
 /* Header Styles */
 
 header {
@@ -36,10 +47,15 @@ header {
   color: #fff;
 }
 
-.logo {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 900;
+.logo a{
+  font-family: 'Lobster', sans-serif;
+  font-weight: 400;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.4rem;
+  text-shadow: 5px 5px 5px #ddd;
 }
+
 
 nav {
   display: flex;
@@ -58,6 +74,14 @@ nav a {
 nav a:hover {
   border-bottom: 2px solid #fff;
   transform: scale(1.1);
+}
+
+.bar {
+  border:2px solid #fff;
+  border-top: 0px;
+  border-bottom: 0px;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 /* Date Style */
@@ -169,4 +193,10 @@ footer {
   color: #fff;
   padding: 1em 3em;
   text-align: center;
+  position: fixed;
+  bottom: 0;
+  right:0;
+  left: 0;
+  width: 100%;
+  margin-top: 4rem;
 }
