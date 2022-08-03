@@ -2,7 +2,8 @@
 
 # Awesome Books
 
-> "Awesome books" is a simple website that displays a list of books and allows you to add and remove books from that list.
+> "Awesome books" is a simple website that displays a list of books and allows you to add and remove books from that list.  
+>>[live demo](https://bateyjosue.github.io/awesome-books/)
 
 ## Built With (Linker)
 
