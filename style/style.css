@@ -29,8 +29,7 @@ ul {
 .hide {
   display: none;
   visibility: hidden;
-  position:fixed;
-
+  position: fixed;
 }
 
 .show {
@@ -47,16 +46,6 @@ header {
   color: #fff;
 }
 
-.logo a{
-  font-family: 'Lobster', sans-serif;
-  font-weight: 400;
-  color: #fff;
-  text-decoration: none;
-  font-size: 1.4rem;
-  text-shadow: 5px 5px 5px #ddd;
-}
-
-
 nav {
   display: flex;
   gap: 1.2em;
@@ -71,15 +60,24 @@ nav a {
   transition: all 400ms ease-in;
 }
 
+.logo a {
+  font-family: 'Lobster', sans-serif;
+  font-weight: 400;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.4rem;
+  text-shadow: 5px 5px 5px #ddd;
+}
+
 nav a:hover {
   border-bottom: 2px solid #fff;
   transform: scale(1.1);
 }
 
 .bar {
-  border:2px solid #fff;
-  border-top: 0px;
-  border-bottom: 0px;
+  border: 2px solid #fff;
+  border-top: 0;
+  border-bottom: 0;
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -195,7 +193,7 @@ footer {
   text-align: center;
   position: fixed;
   bottom: 0;
-  right:0;
+  right: 0;
   left: 0;
   width: 100%;
   margin-top: 4rem;
