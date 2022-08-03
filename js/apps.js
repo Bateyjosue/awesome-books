@@ -1,6 +1,7 @@
 const addBook = document.forms['add-book'];
 const addBookButton = document.querySelector('#submit');
 const bookList = document.querySelector('.book-list');
+const date = document.querySelector('.date');
 let bookArray = [];
 
 class Book {
@@ -35,8 +36,8 @@ if (localStorage.getItem('bookArray') === null) {
 const bookOject = new Book();
 addBookButton.addEventListener('click', (event) => {
   event.preventDefault();
-  const bookTitle = addBook.querySelector('input[name="title"]').value;
-  const bookAuthor = addBook.querySelector('input[name="author"]').value;
+  let bookTitle = addBook.querySelector('input[name="title"]').value;
+  let bookAuthor = addBook.querySelector('input[name="author"]').value;
   if (bookTitle.length > 1 && bookAuthor.length > 1) {
     bookOject.createBook(bookTitle, bookAuthor);
     bookOject.updateCollection();
@@ -47,6 +48,13 @@ addBookButton.addEventListener('click', (event) => {
           </p>
           <button type="button" class="delete-btn">Remove</button>
         </li>`;
+    if (document.querySelector('.validation-error')) {
+      document.querySelector('.validation-error').style.display = 'none';
+    }
+    document.querySelectorAll('.input-text').forEach((element) => {
+      element.value='';
+    });
+
   } else {
     const div = document.createElement('div');
     div.className = 'validation-error';
@@ -74,3 +82,34 @@ bookArray.forEach((book) => {
           <button type="button" class="delete-btn">Remove</button>
         </li>`;
 });
+
+function dateFormat(date) {
+  let daysArr = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const WeekDay = daysArr[date.getDay()];
+
+  let monthArr = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  const month = monthArr[date.getMonth()];
+
+  let day = date.getDay();
+  day = day.toString().padStart(2, "0");
+
+  const year = date.getFullYear();
+
+  let hour = date.getHours();
+  hour = hour % 12 || 12;
+  hour = hour.toString().padStart(2, "0");
+
+  let minute = date.getMinutes();
+  minute = minute.toString().padStart(2, "0");
+
+  let sec = date.getSeconds();
+  sec = sec.toString().padStart(2, "0");
+
+  const time = hour < 12 ? "AM" : "PM";
+
+  return `${WeekDay} ${month} ${day} ${year}, ${hour}:${minute}:${sec}  ${time}`;
+}
+
+setInterval (() => {
+  date.innerHTML = dateFormat(new Date());
+}, 200);

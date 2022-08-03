@@ -106,6 +106,10 @@ input[type="submit"],
   float: right;
   padding: 0.5em 2em;
   box-shadow: 5px 5px 5px #000;
+  background-color: #3a855e;
+  color: #fff;
+  border: none;
+  border-radius: 0.4em;
 }
 
 /* Add Form Styles */
@@ -133,9 +137,9 @@ input[type="text"] {
   margin: 1rem 0;
 }
 
-.new-book hr {
+hr {
   width: 50px;
-  border: 2px solid #000;
+  border: 2px solid #3a855e;
   margin: 0.8em auto;
 }
 
