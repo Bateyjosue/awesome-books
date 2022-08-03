@@ -36,8 +36,8 @@ if (localStorage.getItem('bookArray') === null) {
 const bookOject = new Book();
 addBookButton.addEventListener('click', (event) => {
   event.preventDefault();
-  let bookTitle = addBook.querySelector('input[name="title"]').value;
-  let bookAuthor = addBook.querySelector('input[name="author"]').value;
+  const bookTitle = addBook.querySelector('input[name="title"]').value;
+  const bookAuthor = addBook.querySelector('input[name="author"]').value;
   if (bookTitle.length > 1 && bookAuthor.length > 1) {
     bookOject.createBook(bookTitle, bookAuthor);
     bookOject.updateCollection();
@@ -52,9 +52,8 @@ addBookButton.addEventListener('click', (event) => {
       document.querySelector('.validation-error').style.display = 'none';
     }
     document.querySelectorAll('.input-text').forEach((element) => {
-      element.value='';
+      element.value = '';
     });
-
   } else {
     const div = document.createElement('div');
     div.className = 'validation-error';
@@ -84,32 +83,51 @@ bookArray.forEach((book) => {
 });
 
 function dateFormat(date) {
-  let daysArr = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const daysArr = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   const WeekDay = daysArr[date.getDay()];
 
-  let monthArr = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  const monthArr = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   const month = monthArr[date.getMonth()];
 
   let day = date.getDay();
-  day = day.toString().padStart(2, "0");
+  day = day.toString().padStart(2, '0');
 
   const year = date.getFullYear();
 
   let hour = date.getHours();
   hour = hour % 12 || 12;
-  hour = hour.toString().padStart(2, "0");
+  hour = hour.toString().padStart(2, '0');
 
   let minute = date.getMinutes();
-  minute = minute.toString().padStart(2, "0");
+  minute = minute.toString().padStart(2, '0');
 
   let sec = date.getSeconds();
-  sec = sec.toString().padStart(2, "0");
+  sec = sec.toString().padStart(2, '0');
 
-  const time = hour < 12 ? "AM" : "PM";
+  const time = hour < 12 ? 'AM' : 'PM';
 
   return `${WeekDay} ${month} ${day} ${year}, ${hour}:${minute}:${sec}  ${time}`;
 }
 
-setInterval (() => {
+setInterval(() => {
   date.innerHTML = dateFormat(new Date());
 }, 200);
+
+const nav = document.querySelectorAll('nav a');
+nav.forEach((element) => {
+  element.addEventListener('click', (e) => {
+    if (e.target.innerText === 'List') {
+      document.querySelector('.book-list-container').classList.remove('hide');
+      document.querySelector('.new-book').classList.add('hide');
+      document.querySelector('.contact-form').classList.add('hide');
+    } else if (e.target.innerText === 'Add New') {
+      document.querySelector('.new-book').classList.remove('hide');
+      document.querySelector('.book-list-container').classList.add('hide');
+      document.querySelector('.contact-form').classList.add('hide');
+    } else if (e.target.innerText === 'Contact') {
+      document.querySelector('.new-book').classList.add('hide');
+      document.querySelector('.book-list-container').classList.add('hide');
+      document.querySelector('.contact-form').classList.remove('hide');
+    }
+  });
+});
