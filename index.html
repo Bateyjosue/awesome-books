@@ -4,24 +4,46 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Its a book collection website where you can track of the you road already"
+    />
     <script defer src="js/apps.js"></script>
     <title>Awesome Books</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="style/style.css" />
   </head>
   <body>
+    <header>
+      <div class="logo"><a href="#">Awesome Books</a></div>
+      <nav>
+        <a href="#">List</a>
+        <a href="#" class="bar">Add New</a>
+        <a href="#">Contact</a>
+      </nav>
+    </header>
     <main>
+      <div class="date-container">
+        <span class="date"></span>
+      </div>
       <section class="book-list-container">
         <h2>All Awesome Books</h2>
-
+        <hr />
         <ul class="book-list"></ul>
       </section>
       <section class="new-book">
-        <hr>
         <h2>Add a New Book</h2>
+        <hr />
         <form method="post" class="add-book" id="add-book">
           <div class="input-field">
             <input
+              class="input-text"
               type="text"
               name="title"
               id="title"
@@ -32,6 +54,7 @@
           </div>
           <div class="input-field">
             <input
+              class="input-text"
               type="text"
               name="author"
               id="author"
@@ -51,6 +74,31 @@
           </div>
         </form>
       </section>
+      <section class="contact-form">
+        <h2>Contact Information</h2>
+        <hr />
+        <p>
+          Do have any question or you just want to "Hello"? <br />You can reach
+          out to us!
+        </p>
+        <div class="contact-info">
+          <ul>
+            <li><strong>e-mail:</strong> josuebatey19@gmail.com</li>
+            <li><strong>Phone Number:</strong> +250 784 976 465</li>
+            <li><strong>Address :</strong> KG 185 ST Kigali, Rwanda</li>
+          </ul>
+          <ul>
+            <li><strong>e-mail:</strong> praisesmusa@gmail.com</li>
+            <li><strong>Phone Number:</strong> +234(0)9051518051</li>
+            <li>
+              <strong>Address : </strong> Igabi N0.A03, Kaduna State, Nigeria
+            </li>
+          </ul>
+        </div>
+      </section>
     </main>
+    <footer>
+      <p>Copyright &copy;2022, Josh Batey | Praises Tula</p>
+    </footer>
   </body>
 </html>
